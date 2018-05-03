@@ -1,6 +1,6 @@
 {
   "name": "webapp-gulp-builder",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "My own common builder",
   "main": "gulpfile.coffee",
   "scripts": {
