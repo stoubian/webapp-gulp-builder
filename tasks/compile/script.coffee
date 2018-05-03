@@ -10,14 +10,16 @@ replace       = require 'gulp-replace-task'
 sourcemaps    = require 'gulp-sourcemaps'
 uglify        = require 'gulp-uglify'
 rev           = require 'gulp-rev'
+addSrc        = require 'gulp-add-src'
 
 module.exports = (gulp, config) ->
-  gulp.task 'compile:coffee', ->
+  gulp.task 'compile:script', ->
     gulp.src config.input.coffee
     .pipe plumber()
     .on 'error', gutil.log
     .pipe gif config.input.replace.enabled, replace config.input.replace
     .pipe coffee(config.coffee)
+    .pipe addSrc.append(config.input.javascript)
     .pipe ngAnnotate(config.ngAnnotate)
     .pipe gif config.minify, uglify(config.uglify)
     .pipe order config.input.order or ['*']
