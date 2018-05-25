@@ -1,11 +1,11 @@
 module.exports = (gulp, config) ->
-  require('./coffee-script.coffee') gulp, config
+  require('./script.coffee') gulp, config
   require('./jade.coffee') gulp, config
   require('./template.coffee') gulp, config
   require('./vendor.coffee') gulp, config
 
   tasks = [
-    'compile:coffee'
+    'compile:script'
     'compile:jade'
     'compile:template'
     'compile:vendor'
