@@ -26,7 +26,7 @@ module.exports = (gulp, config) ->
     .pipe sourcemaps.init()
     .pipe sourcemaps.write()
     .pipe rename config.output.loopback.filename
-    .pipe gif config.input.loopback.prefix?.replace, replace('$LoopBack$', config.input.loopback.prefix.with)
+    .pipe gif config.input.loopback.prefix?.replace, replace('$LoopBack$', config.input.loopback.prefix?.with)
     .pipe rev()
     .pipe gulp.dest config.output.loopback.path
     .pipe rev.manifest({

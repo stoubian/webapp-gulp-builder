@@ -28,6 +28,7 @@ config.input = {}
 config.input.path = 'src'
 # Main index file
 config.input.jade = "#{config.input.path}/index.jade"
+config.jade.locals
 # Where to find templates
 config.input.template = [
   "#{config.input.path}/*.jade"
@@ -37,6 +38,11 @@ config.input.template = [
 config.input.coffee = [
   "#{config.input.path}/*.coffee"
   "#{config.input.path}/**/*.coffee"
+]
+# Where to find Javascript files
+config.input.javascript = [
+  "#{config.input.path}/*.js"
+  "#{config.input.path}/**/*.js"
 ]
 
 # Where to find less file(s)
